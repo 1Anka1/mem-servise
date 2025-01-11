@@ -1,0 +1,16 @@
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-bar a:hover {
+  color: orange;
+  transition: 200ms ease;
+}
+
+.active {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}

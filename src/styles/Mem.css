@@ -1,0 +1,46 @@
+.mem {
+  width: 800px;
+  padding: 45px;
+  margin: 25px;
+  border: solid black;
+  border-color: black;
+  float: left;
+  border-width: 3px 4px 3px 5px;
+  border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
+  transform: rotate(2deg);
+}
+
+.mem-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mem-image {
+  padding: 30px;
+}
+
+.mem-controls {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 15px;
+}
+
+.upvote:hover {
+  color: green;
+  transition: 200ms ease;
+}
+
+.downvote {
+  transform: rotate(180deg);
+}
+
+.downvote:hover {
+  color: red;
+}
