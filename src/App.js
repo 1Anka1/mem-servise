@@ -8,6 +8,7 @@ import {
 import { memes as initialMemes } from './data/data';
 import MemList from './components/MemList';
 import NavBar from './components/NavBar';
+import Error from './components/Error';
 
 const App = () => {
   const [memes, setMemes] = useState(initialMemes);
@@ -57,6 +58,7 @@ const App = () => {
             }
           />
           <Route path="/" element={<Navigate to="/regular" />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </div>
     </Router>
