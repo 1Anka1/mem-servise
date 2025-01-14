@@ -1,10 +1,11 @@
 import React from 'react';
 import Mem from './Mem';
 import '../styles/MemList.css';
+import Disclaimer from './Disclaimer';
 
-const MemList = ({ memes, onUpvote, onDownvote }) => {
-  return (
-    <div className="mem-list">
+const MemList = ({ memes, onUpvote, onDownvote, handleSave }) => {
+  return memes.length > 0 ? (
+    <ul className="mem-list">
       {memes.map((mem) => (
         <Mem
           key={mem.title}
@@ -13,11 +14,14 @@ const MemList = ({ memes, onUpvote, onDownvote }) => {
           downvotes={mem.downvotes}
           imgUrl={mem.imgUrl}
           isStarred={mem.isStarred}
-          onUpvote={() => onUpvote(mem.title)}
-          onDownvote={() => onDownvote(mem.title)}
+          onUpvote={onUpvote}
+          onDownvote={onDownvote}
+          handleSave={handleSave}
         />
       ))}
-    </div>
+    </ul>
+  ) : (
+    <Disclaimer />
   );
 };
 

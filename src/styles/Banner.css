@@ -1,0 +1,18 @@
+.banner {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-text {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.banner-text span {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  color: orange;
+}

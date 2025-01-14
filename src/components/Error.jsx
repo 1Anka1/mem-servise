@@ -1,22 +1,9 @@
+import '../styles/Banner.css';
+
 function Error404() {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <p
-        style={{
-          fontSize: '50px',
-          textAlign: 'center',
-          marginTop: '50px',
-        }}
-      >
-        Wrong page ❌
-      </p>
+    <div className="banner">
+      <p className="banner-text">Wrong page ❌</p>
     </div>
   );
 }
