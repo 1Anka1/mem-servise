@@ -8,7 +8,8 @@ const MemList = ({ memes, onUpvote, onDownvote, handleSave }) => {
     <ul className="mem-list">
       {memes.map((mem) => (
         <Mem
-          key={mem.title}
+          key={mem._id}
+          _id={mem._id}
           title={mem.title}
           upvotes={mem.upvotes}
           downvotes={mem.downvotes}

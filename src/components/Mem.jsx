@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/Mem.css';
 
 const Mem = ({
+  _id,
   title,
   upvotes,
   downvotes,
@@ -20,7 +21,7 @@ const Mem = ({
 
       <div className="mem-controls">
         <div className="btn-wrapper">
-          <button onClick={() => onUpvote(title)} className=" upvote">
+          <button onClick={() => onUpvote(_id)} className=" upvote">
             <svg width="25" height="25">
               <use href="img/sprite.svg#like"></use>
             </svg>
@@ -28,7 +29,7 @@ const Mem = ({
           <span> {upvotes}</span>
         </div>
         <div className="btn-wrapper">
-          <button onClick={() => onDownvote(title)} className=" downvote">
+          <button onClick={() => onDownvote(_id)} className=" downvote">
             <svg width="25" height="25">
               <use href="img/sprite.svg#like"></use>
             </svg>
@@ -37,7 +38,7 @@ const Mem = ({
         </div>
         <div className="btn-wrapper">
           <button
-            onClick={() => handleSave(title)}
+            onClick={() => handleSave(_id)}
             className={`heart ${isSaved ? 'isSaved' : ''}`}
           >
             {' '}

@@ -6,13 +6,22 @@ const NavBar = () => {
   return (
     <>
       <nav className="nav-bar">
-        <NavLink to="/hot" activeclassname="active">
+        <NavLink
+          to="/hot"
+          className={({ isActive }) => (isActive ? 'active' : '')}
+        >
           HOT
         </NavLink>
-        <NavLink to="/regular" activeclassname="active">
+        <NavLink
+          to="/regular"
+          className={({ isActive }) => (isActive ? 'active' : '')}
+        >
           REGULAR
         </NavLink>
-        <NavLink to="/saved" activeclassname="active">
+        <NavLink
+          to="/saved"
+          className={({ isActive }) => (isActive ? 'active' : '')}
+        >
           SAVED
         </NavLink>
       </nav>

@@ -9,26 +9,26 @@ import HomePage from './components/HomePage';
 const App = () => {
   const [memes, setMemes] = useState(initialMemes);
 
-  const handleUpvote = (title) => {
+  const handleUpvote = (_id) => {
     setMemes((prevMemes) =>
       prevMemes.map((mem) =>
-        mem.title === title ? { ...mem, upvotes: mem.upvotes + 1 } : mem
+        mem._id === _id ? { ...mem, upvotes: mem.upvotes + 1 } : mem
       )
     );
   };
 
-  const handleDownvote = (title) => {
+  const handleDownvote = (_id) => {
     setMemes((prevMemes) =>
       prevMemes.map((mem) =>
-        mem.title === title ? { ...mem, downvotes: mem.downvotes + 1 } : mem
+        mem._id === _id ? { ...mem, downvotes: mem.downvotes + 1 } : mem
       )
     );
   };
 
-  const handleSave = (title) => {
+  const handleSave = (_id) => {
     setMemes((prevMemes) =>
       prevMemes.map((mem) =>
-        mem.title === title ? { ...mem, isSaved: !mem.isSaved } : mem
+        mem._id === _id ? { ...mem, isSaved: !mem.isSaved } : mem
       )
     );
   };
