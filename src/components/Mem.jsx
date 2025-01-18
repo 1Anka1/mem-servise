@@ -9,6 +9,7 @@ const Mem = ({
   onUpvote,
   onDownvote,
   handleSave,
+  isSaved,
 }) => {
   return (
     <li className="mem">
@@ -19,7 +20,7 @@ const Mem = ({
 
       <div className="mem-controls">
         <div className="btn-wrapper">
-          <button onClick={() => onUpvote(title)} className="mem-btn upvote">
+          <button onClick={() => onUpvote(title)} className=" upvote">
             <svg width="25" height="25">
               <use href="img/sprite.svg#like"></use>
             </svg>
@@ -27,10 +28,7 @@ const Mem = ({
           <span> {upvotes}</span>
         </div>
         <div className="btn-wrapper">
-          <button
-            onClick={() => onDownvote(title)}
-            className="mem-btn downvote"
-          >
+          <button onClick={() => onDownvote(title)} className=" downvote">
             <svg width="25" height="25">
               <use href="img/sprite.svg#like"></use>
             </svg>
@@ -38,9 +36,13 @@ const Mem = ({
           <span>{downvotes}</span>
         </div>
         <div className="btn-wrapper">
-          <button onClick={() => handleSave(title)} className="mem-btn">
+          <button
+            onClick={() => handleSave(title)}
+            className={`heart ${isSaved ? 'isSaved' : ''}`}
+          >
+            {' '}
             <svg width="25" height="25">
-              <use href="img/sprite.svg#like"></use>
+              <use href="img/sprite.svg#heart"></use>
             </svg>
           </button>
         </div>

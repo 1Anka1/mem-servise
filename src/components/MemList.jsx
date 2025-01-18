@@ -13,7 +13,7 @@ const MemList = ({ memes, onUpvote, onDownvote, handleSave }) => {
           upvotes={mem.upvotes}
           downvotes={mem.downvotes}
           imgUrl={mem.imgUrl}
-          isStarred={mem.isStarred}
+          isSaved={mem.isSaved}
           onUpvote={onUpvote}
           onDownvote={onDownvote}
           handleSave={handleSave}

@@ -44,3 +44,11 @@
 .downvote:hover {
   color: red;
 }
+
+.isSaved {
+  fill: red;
+}
+.heart:hover {
+  fill: red;
+  transition: 200ms ease;
+}
