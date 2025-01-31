@@ -8,20 +8,53 @@ import HomePage from './components/HomePage';
 
 const App = () => {
   const [memes, setMemes] = useState(initialMemes);
+  const [votedMemes, setVotedMemes] = useState(new Map());
 
   const handleUpvote = (_id) => {
     setMemes((prevMemes) =>
-      prevMemes.map((mem) =>
-        mem._id === _id ? { ...mem, upvotes: mem.upvotes + 1 } : mem
-      )
+      prevMemes.map((mem) => {
+        if (mem._id !== _id) return mem;
+
+        let newUpvotes = mem.upvotes;
+        let newDownvotes = mem.downvotes;
+        let currentVote = votedMemes.get(_id);
+
+        if (currentVote === 'upvote') {
+          return mem;
+        } else {
+          if (currentVote === 'downvote') {
+            newDownvotes -= 1;
+          }
+          newUpvotes += 1;
+          setVotedMemes((prev) => new Map(prev).set(_id, 'upvote'));
+        }
+
+        return { ...mem, upvotes: newUpvotes, downvotes: newDownvotes };
+      })
     );
   };
 
   const handleDownvote = (_id) => {
     setMemes((prevMemes) =>
-      prevMemes.map((mem) =>
-        mem._id === _id ? { ...mem, downvotes: mem.downvotes + 1 } : mem
-      )
+      prevMemes.map((mem) => {
+        if (mem._id !== _id) return mem;
+
+        let newUpvotes = mem.upvotes;
+        let newDownvotes = mem.downvotes;
+        let currentVote = votedMemes.get(_id);
+
+        if (currentVote === 'downvote') {
+          return mem;
+        } else {
+          if (currentVote === 'upvote') {
+            newUpvotes -= 1;
+          }
+          newDownvotes += 1;
+          setVotedMemes((prev) => new Map(prev).set(_id, 'downvote'));
+        }
+
+        return { ...mem, upvotes: newUpvotes, downvotes: newDownvotes };
+      })
     );
   };
 

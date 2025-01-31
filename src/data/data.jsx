@@ -2,7 +2,7 @@ export const memes = [
   {
     _id: '1',
     title: 'Mem 1',
-    upvotes: 6,
+    upvotes: 5,
     downvotes: 0,
     imgUrl: 'img/mem1.jpg',
     isSaved: false,
