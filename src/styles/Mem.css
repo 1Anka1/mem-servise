@@ -1,13 +1,22 @@
 .mem {
-  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
   padding: 45px;
-  margin: 25px;
+  margin: 25px auto;
   border: solid black;
   border-color: black;
-  float: left;
   border-width: 3px 4px 3px 5px;
   border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
   transform: rotate(2deg);
+}
+
+@media screen and (min-width: 480px) {
+  .mem {
+    width: 480px;
+  }
 }
 
 .mem-wrapper {
@@ -18,13 +27,11 @@
 
 .mem-image {
   padding: 30px;
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 .mem-controls {
   display: flex;
-  justify-content: space-around;
+  gap: 50px;
 }
 
 .btn-wrapper {
